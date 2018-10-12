@@ -16,17 +16,10 @@ x-defaults: &defaults
     - postgres
     - memcached
     - smtp
-
-  environment:
-    # Run `docker-compose run web config generate-secret-key`
-    # to get the SENTRY_SECRET_KEY value.
-    SENTRY_SECRET_KEY: ''
-    SENTRY_MEMCACHED_HOST: memcached
-    SENTRY_REDIS_HOST: redis
-    SENTRY_POSTGRES_HOST: postgres
-    SENTRY_EMAIL_HOST: smtp
+  env_file:
+    .env
   volumes:
-    - sentry-data:/var/lib/sentry/files
+    - ./data/sentry:/var/lib/sentry/files
 
 
 services:
@@ -46,7 +39,7 @@ services:
     restart: unless-stopped
     image: postgres:9.5
     volumes:
-      - sentry-postgres:/var/lib/postgresql/data
+      - ./data/postgres:/var/lib/postgresql/data
 
   web:
     <<: *defaults
@@ -60,8 +53,3 @@ services:
   worker:
     <<: *defaults
     command: run worker
-
-
-volumes:
-    sentry-data:
-    sentry-postgres:
