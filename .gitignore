@@ -33,6 +33,7 @@ var/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+sentry_install_log*.txt
 
 # Unit test / coverage reports
 htmlcov/
@@ -68,9 +69,6 @@ target/
 # https://docs.docker.com/compose/extends/
 docker-compose.override.yml
 
-# env config
-.env
-
 *.tar
 data/
 <<<<<<< HEAD
@@ -83,3 +81,8 @@ data/
 =======
 .vscode/tags
 >>>>>>> 9.1.2
+
+# custom Sentry config
+sentry/sentry.conf.py
+sentry/config.yml
+sentry/requirements.txt
