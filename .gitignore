@@ -71,16 +71,7 @@ docker-compose.override.yml
 
 *.tar
 data/
-<<<<<<< HEAD
-
-# Pycharm
-.idea
-
-# env
-.env
-=======
 .vscode/tags
->>>>>>> 9.1.2
 
 # custom Sentry config
 sentry/sentry.conf.py
@@ -90,3 +81,6 @@ sentry/requirements.txt
 relay/credentials.json
 relay/config.yml
 symbolicator/config.yml
+
+# Pycharm
+.idea

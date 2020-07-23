@@ -181,7 +181,8 @@ services:
   nginx:
     << : *restart_policy
     ports:
-      - '9000:80/tcp'
+      - '80:80/tcp'
+      - '443:443/tcp'
     image: 'nginx:1.16'
     volumes:
       - type: bind
