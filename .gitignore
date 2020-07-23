@@ -84,3 +84,7 @@ symbolicator/config.yml
 
 # Pycharm
 .idea
+
+# Nginx
+nginx/certs/
+nginx/public_html/
